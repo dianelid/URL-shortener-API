@@ -1,7 +1,7 @@
 # URL-shortener-API
 
 Este projeto consiste basicamente em um serviço RESTful que recebe uma URL e retorna uma versão encurtada desta URL.
-O serviço também retorna informações sobre as URLs, como a URL Original, a URL encurtada, data de criação e usuário. 
+O serviço também retorna informações sobre as URLs, como a URL Original, a URL encurtada, data de criação, usuário e estatística de acesso. 
 Além disso, o serviço permite a criação de usuários que podem ser associados às URLs.
 O usuário poderá pesquisar por todas as URLs encurtadas que ele tem, inserindo seu ID de usuário na chamada do serviço.
 
