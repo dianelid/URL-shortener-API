@@ -8,6 +8,8 @@ O usuário poderá pesquisar por todas as URLs encurtadas que ele tem, inserindo
 A API foi desenvolvida na linguagem PHP e para a persistência dos dados foi utilizado MySQL.
 Para testar a chamadas à API utilizando HTTP GET e POST foi utilizado o site https://reqbin.com/.
 
+Ao acessar uma url encurtada gerada pela API o arquivo index.php efetua o redirecionamento para o link original.
+
 #### A API é comporta por quatro endpoints:
 
 * *get_info*: Obtém informações de uma url específica.
