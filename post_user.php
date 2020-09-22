@@ -30,3 +30,4 @@
   } else {
     echo "Não foi posível criar o usuário!";
   }
+?>

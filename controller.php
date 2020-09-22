@@ -107,3 +107,4 @@ class Controller {
         return $str;
     }
 }
+?>
