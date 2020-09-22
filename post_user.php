@@ -1,5 +1,5 @@
 <?php
-  require "gestor.php";
+  require "controller.php";
 
   //get post data
   $data = json_decode(file_get_contents('php://input'), true);
@@ -7,7 +7,7 @@
     "name": "Lidiane"
   }';*/
   
-  $db = new Gestor();
+  $db = new Controller();
 
   $params = array(
     ':name' => $data['name']

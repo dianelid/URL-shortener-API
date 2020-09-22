@@ -1,6 +1,9 @@
 <?php 
-class Gestor
-{    
+
+define("URLLENGTH", 5);
+define("SITEURL", "http://localhost/URL-shortener-API?u=");
+
+class Controller {    
     private $db_server = 'localhost';
     private $db_name = 'database';
     private $db_charset = 'utf8';
@@ -8,7 +11,7 @@ class Gestor
     PRIVATE $db_password = '';
     
     //==================================================================
-    public function EXE_QUERY($query, $parameters = null, $debug = true, $close_connection = true){
+    public function EXE_QUERY($query, $parameters = null, $debug = true, $close_connection = true) {
         //executes a query to the database (SELECT)
         $results = null;
 
@@ -51,7 +54,7 @@ class Gestor
     }
 
     //==================================================================
-    public function EXE_NON_QUERY($query, $parameters = null, $debug = true, $close_connection = true){
+    public function EXE_NON_QUERY($query, $parameters = null, $debug = true, $close_connection = true) {
         //executes a query to the database (INSERT, UPDATE, DELETE)
 
         //connection
@@ -90,5 +93,17 @@ class Gestor
         }
         
         return true;
+    }
+
+    function GetRandomString(int $length) {
+        $a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $aLength = strlen($a);
+        $str = "";
+    
+        for($i = 0; $i < $length; $i++) {
+          $str .= $a[rand(0, $aLength-1)];
+        }
+    
+        return $str;
     }
 }

@@ -1,19 +1,20 @@
 <?php
-  require "gestor.php";
+  require "controller.php";
 
   //get post data
   $data = json_decode(file_get_contents('php://input'), true);
   /*$data = '{
     "url": "https://www.hotmail.com.br",
-    "short_url": "www",
     "id_user": 1
   }';*/
   
-  $db = new Gestor();
+  $db = new Controller();
+
+  $short_url = SITEURL . $db->GetRandomString(URLLENGTH);
 
   $params = array(
       ':original_url' => $data['url'],
-      ':short_url' => $data['short_url'],
+      ':short_url' => $short_url,
       ':id_user' => $data['id_user']
   );
 
@@ -27,7 +28,7 @@
     $result = array(
       'url' => array(
         'original' => $data['url'],
-        'short' => $data['short_url'],
+        'short' => $short_url,
         'id_user' => $data['id_user']
       )
     );

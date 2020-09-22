@@ -1,8 +1,8 @@
 <?php
 
-  require "gestor.php";
+  require "controller.php";
 
-  $db = new Gestor();
+  $db = new Controller();
 
   $params = array(
     ':original_url' => $_GET['url']
